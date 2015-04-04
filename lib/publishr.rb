@@ -1,12 +1,12 @@
 # PublishR -- Rapid publishing for ebooks (epub, Kindle), paper (LaTeX) and the web (webgen)'
 # Copyright (C) 2012 Red (E) Tools Ltd. (www.red-e.eu)
-# 
+#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
 # published by the Free Software Foundation, either version 3 of the
 # License, or (at your option) any later version.
-# 
-# 
+#
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -24,7 +24,7 @@ require 'sanitize'
 require 'nokogiri'
 require 'unicode_utils/upcase'
 require 'citeproc'
-require 'v8'
+require 'execjs'
 require 'bibtex'
 
 dir = File.dirname(__FILE__)
@@ -42,7 +42,7 @@ module Kramdown
       # output og and fg instead of guillemot
       ENTITY_CONV_TABLE[171] = ['\og{}']
       ENTITY_CONV_TABLE[187] = ['\fg{}']
-      
+
       TABLE_ALIGNMENT_CHAR[:default] = 'p{1in}'
     end
   end
