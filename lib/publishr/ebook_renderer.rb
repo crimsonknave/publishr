@@ -71,7 +71,7 @@ module Publishr
       (Dir[File.join(@inpath, "*#{ @language }.page")] + ["covertext#{ @language }.txt", "frontmatter#{ @language }.txt", "toc#{ @language }.txt"]).sort.each do |infilepath|
         Publishr.log "[Publishr::EbookRenderer] render_htmls: rendering #{ infilepath }"
 
-        kramdown_options = @metadata['kramdown_options']
+        kramdown_options = @metadata['kramdown_options'] || {}
         if @metadata['continuous_footnote_numbering_ebook'] == true
           previous_footnote_count, previous_citation_count = Publishr::Helper.get_footnote_count_upto_file(@inpath, @language, File.basename(infilepath))
         else
