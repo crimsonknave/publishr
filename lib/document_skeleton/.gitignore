@@ -1,0 +1,11 @@
+latex
+epub
+*~
+*.epub
+*.pdf
+!src/images/*.pdf
+*.mobi
+*.zip
+*sass-cache
+out
+pdfsnapshot.jpg

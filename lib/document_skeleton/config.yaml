@@ -1,0 +1,7 @@
+sources:
+  - ["/", "Webgen::Source::FileSystem", "src"]
+  - ["/", "Webgen::Source::FileSystem", "src/images", "*.jpg"]
+patterns:
+  Copy:
+    add: 
+      - "**/*.ttf"

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="<%= @metadata['identifier'] %>">
+
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf">
+    <dc:title><%= @metadata['title'] %></dc:title>
+    <dc:language xsi:type="dcterms:RFC3066"><%= @metadata['language'] %></dc:language>
+    <meta name="cover" content="coverjpg" />
+    <dc:identifier id="<%= @metadata['identifier'] %>" opf:scheme="ISBN"><%= @metadata['isbn'] %></dc:identifier>
+    <dc:creator><%= @metadata['creator'] %></dc:creator>
+    <dc:publisher><%= @metadata['publisher'] %></dc:publisher>
+    <dc:subject><%= @metadata['subject'] %></dc:subject>
+    <dc:date xsi:type="dcterms:W3CDTF">2012-01-01</dc:date>
+    <dc:description><%= @metadata['description'] %></dc:description>
+    <dc:rights><%= @metadata['copyright'] %></dc:rights>
+  </metadata>
+
+  <manifest>
+    <item id="ncx"         href="toc.ncx"                 media-type="application/x-dtbncx+xml" />
+    <item id="css"         href="epub.css"                media-type="text/css" />
+    <item id="cssoverride" href="override.css"            media-type="text/css" />
+<%= manifest_items %>
+  </manifest>
+
+  <spine toc="ncx">
+<%= spine_items %>
+  </spine>
+
+  <guide>
+    <reference type="toc" title="Table of Contents" href="toc<%= @language %>.html" />
+    <reference type="text" title="Text" href="covertext<%= @language %>.html" />
+    <reference type="bibliography" title="Bibliography" href="bibliography<%= @language %>.html" />
+  </guide>
+
+</package>

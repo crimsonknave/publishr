@@ -1,0 +1,128 @@
+% ------- MAIN DOCUMENT SETUP -----------
+\documentclass[11pt,a5paper,pdflatex,DIV25,BCOR13mm,headinclude,footinclude,chapterprefix=on]{scrbook}
+
+% The following options can be added to the [] brackets above to modify the layout:
+%
+% (big|normal|small)headings Sets the font size of the chapter title
+% chapterprefix=on Adds "Chapter n" before each actual chapter title
+% headsepline for a header line
+% footsepline for a footer line
+
+
+
+% ------- FOOTNOTE SETTINGS -----------
+% Uncomment the next 2 lines if you want your footnote numbers to continue over chapters
+% \usepackage{chngcntr}
+% \counterwithout{footnote}{chapter}
+
+
+
+% ------------ FONT SELECTION -----------
+\usepackage{times}
+\usepackage[T1]{fontenc}
+
+% set the font of all chapter titles
+% \renewcommand{\sectfont}{\normalfont}
+
+% set the font of all headings
+\renewcommand{\headfont}{\footnotesize}
+
+
+
+% ------------ LANGUAGE SELECTION -----------
+% Uncomment the language you are going to use
+\usepackage[english]{babel}
+% \usepackage[ngerman]{babel}
+% \usepackage[french]{babel}
+% \usepackage[spanish]{babel}
+
+
+% -------------- PACKAGES ----------------
+% This list imports packages that provide special typesetting functionality
+\usepackage[utf8]{inputenc}
+\usepackage[force,almostfull]{textcomp}
+\usepackage{xspace}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{hyphenat}
+\usepackage[margin=0pt,font={small,sf},labelfont={bf,sf,small},labelformat=empty,justification=centering]{caption}
+\usepackage[spacing=true,protrusion=true,expansion=true]{microtype}
+\usepackage{makeidx}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{sidecap}
+\usepackage{layout}
+\usepackage{scrpage2}
+\usepackage{pdfpages}
+
+% Bibliography support via BibLaTeX
+\usepackage[backend=biber,autocite=footnote,style=verbose-ibid]{biblatex}
+\bibliography{bibliography.en.bib}
+
+
+
+
+% -------------- TYPESETTING CUSTOMZIATIONS ----------------
+\renewcommand{\sfdefault}{cmbr}  % use prettier sans serif font
+\renewcommand{\ttdefault}{lmtt}  % use prettier typewriter font
+
+% The only way to specify centered text is by writing it as a kramdown quote with the class "center"
+\newenvironment{quotecenter}{ \begin{center} }{ \end{center} }
+\newenvironment{quotationcenter}{ \begin{center} }{ \end{center} }
+
+\newenvironment{quotenormal}{ \begin{quote}\small}{ \end{quote} }
+\newenvironment{quotationnormal}{ \begin{quotation}\small}{ \end{quotation} }
+
+\newenvironment{quoteemail}{ \begin{flushleft}\begin{quote} \footnotesize\sffamily}{ \end{quote}\end{flushleft} }
+\newenvironment{quotationemail}{ \begin{flushleft}\begin{quote} \footnotesize\sffamily}{ \end{quote}\end{flushleft} }
+
+\newenvironment{quotetranscript}{ \begin{quote}\small\normalfont }{ \end{quote} }
+\newenvironment{quotationtranscript}{ \begin{quote}\small\normalfont }{ \end{quote} }
+
+\newenvironment{quotelyrics}{ \begin{quote}\small\normalfont }{ \end{quote} }
+\newenvironment{quotationlyrics}{ \begin{quote}\small\normalfont }{ \end{quote} }
+
+% Uncomment the following when you need polytonic Greek support
+% \usepackage{fontspec}
+% \newenvironment{quoteopentype}{ \begin{quote}\fontspec{GFS Didot} }{ \end{quote} }
+% \newenvironment{quotationopentype}{ \begin{quote}\fontspec{GFS Didot} }{ \end{quote} }
+% \newenvironment{opentype}{ \fontspec{GFS Didot} }{ \fontfamily{lmr}\selectfont }
+
+\newcommand{\omission}{\mbox{[\dots\hspace{-1,5pt}]}}
+\newcommand{\sessiondate}[1]{\hspace{-5mm}\textit{\scriptsize{#1}}\nopagebreak[4]}
+\newcommand{\object}[1]{\textit{#1}}
+\newcommand{\book}[1]{\textsf{#1}}
+\newcommand{\name}[1]{\textsc{#1}}
+\newcommand{\iron}[1]{\glq#1\grq{}}
+
+% The following are common abbreviations for the German language
+% \newcommand{\zB}{\mbox{z.\,B.}\xspace}
+% \newcommand{\dH}{\mbox{d.\,h.}\xspace}
+% \newcommand{\ua}{\mbox{u.\,a.}\xspace}
+
+
+% -------------- OTHER GENERAL SETTINGS ----------------
+\makeindex
+\makeglossary
+
+% -------------- CHAPTER HEADING SETTINGS --------------
+
+% Distance above the chapter heading
+% \def\chapterheadendvskip{\vspace{100pt}}
+
+% Distance below the chapter heading
+% \def\chapterheadstartvskip{\vspace{100pt}}
+
+% Chapter titles are centered
+% \addtokomafont{chapter}{\centering}
+
+% Adjust chapter prefix
+% \renewcommand*{\chapterformat}{
+% \mbox{\hspace{11pt}\chapappifchapterprefix{\nobreakspace}\thechapter\autodot\enskip}
+% }
+
+
+% -------------- MARGIN SETTINGS -----------------
+% the following are automatically calculated and set according to the "Canons of Page constructions" (see Wikipediea) depending on the DIV value at the first line of this file. If you don't like the result, you can override the calculated values here, see http://en.wikibooks.org/wiki/LaTeX/Page_Layout
+% \textheight 500pt
+% \textwidth 300pt

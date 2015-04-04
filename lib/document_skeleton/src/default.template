@@ -1,0 +1,23 @@
+--- pipeline:haml,tags,blocks,erb
+!!!
+%html
+  %head
+    %meta{ 'http-equiv' => 'Content-Type', :content => 'text/html; charset=UTF-8' }
+    %meta{ :name => 'language', :content => 'en' }
+    %title==  - #{ context.node['title'] }
+    %link{ :rel => 'stylesheet', :type =>"text/css", :href =>  '{relocatable: /screen.css}', :media => 'screen' }
+
+    %body
+      #metanavi
+        %a{ :href => "{relocatable: /}" }Home
+
+      .main
+        #menu
+          {menu: }
+        #content
+          <webgen:block name="content" />
+
+      #footer
+        .centered
+          .items
+            %a{ :href => "{relocatable: /}" }Home

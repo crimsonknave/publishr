@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+
+# PublishR -- Rapid publishing for ebooks (epub, Kindle), paper (LaTeX) and the web (webgen)'
+# Copyright (C) 2012 Red (E) Tools Ltd. (www.red-e.eu)
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+# 
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+
+require 'publishr'
+
+if ARGV[2].nil?
+  puts 'Missing arguments. See https://github.com/michaelfranzl/publishr for documentation.'
+  Process.exit!
+end
+
+source_path = ARGV[0]
+format = ARGV[1]
+language = ARGV[2]
+converters_path = ARGV[3] ? ARGV[3] : nil
+
+project = Publishr::Project.new(source_path, language, converters_path)
+
+Dir.chdir source_path # this is important
+
+case format
+  when 'ebook'
+    puts 'Making ebook'
+    puts project.make_ebook
+  when 'pdf'
+    puts 'Making PDF'
+    puts project.make_pdf
+  when 'web'
+    puts 'Making static website'
+    puts project.make_web
+  else
+    puts "Invalid format #{ format }."
+end

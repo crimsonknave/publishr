@@ -1,0 +1,83 @@
+% ------- MAIN DOCUMENT SETUP -----------
+\documentclass[11pt,a5paper,pdflatex,DIV25,BCOR13mm,headinclude,footinclude,chapterprefix=false]{scrbook}
+
+
+% ------- PAGE NUMBER SETTINGS -----------
+\pagenumbering{arabic}
+
+
+
+% ------- PAGE HEADER SETTINGS -----------
+\usepackage{scrpage2}
+\pagestyle{scrheadings}
+\manualmark
+\clearscrheadfoot
+% \ofoot[]{}                 %Seitenzahl unten außen erst spaeter einschalten
+
+
+
+% ------------ FONT SELECTION -----------
+\usepackage{times}
+\usepackage[T1]{fontenc}
+
+
+
+% ------------ LANGUAGE SELECTION -----------
+% Uncomment the language you are going to use
+\usepackage[english]{babel}
+% \usepackage[ngerman]{babel}
+% \usepackage[french]{babel}
+% \usepackage[spanish]{babel}
+
+
+% -------------- PACKAGES ----------------
+% This list imports packages that provide special typesetting functionality
+\usepackage[utf8]{inputenc}
+\usepackage[force,almostfull]{textcomp}
+\usepackage{xspace}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{hyphenat}
+\usepackage[margin=0pt,font={small,sf},labelfont={bf,sf,small},labelformat=empty,justification=centering]{caption}
+\usepackage[spacing=true,protrusion=true,expansion=true]{microtype}
+\usepackage{makeidx}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{sidecap}
+
+
+
+
+% -------------- TYPESETTING CUSTOMZIATIONS ----------------
+\renewcommand{\sfdefault}{cmbr}  % use prettier sans serif font
+\renewcommand{\ttdefault}{lmtt}  % use prettier typewriter font
+
+\newenvironment{quotenormal}{ \begin{quote}\small}{ \end{quote} }
+\newenvironment{quotationnormal}{ \begin{quotation}\small}{ \end{quotation} }
+
+\newenvironment{quoteemail}{ \begin{flushleft}\begin{quote} \footnotesize\sffamily}{ \end{quote}\end{flushleft} }
+\newenvironment{quotationemail}{ \begin{flushleft}\begin{quote} \footnotesize\sffamily}{ \end{quote}\end{flushleft} }
+
+\newenvironment{quotetranscript}{ \begin{quote}\small\normalfont }{ \end{quote} }
+\newenvironment{quotationtranscript}{ \begin{quote}\small\normalfont }{ \end{quote} }
+
+\newenvironment{quotelyrics}{ \begin{quote}\small\normalfont }{ \end{quote} }
+\newenvironment{quotationlyrics}{ \begin{quote}\small\normalfont }{ \end{quote} }
+
+\newcommand{\omission}{\mbox{[\dots\hspace{-1,5pt}]}}
+\newcommand{\sessiondate}[1]{\hspace{-5mm}\textit{\scriptsize{#1}}\nopagebreak[4]}
+\newcommand{\object}[1]{\textit{#1}}
+\newcommand{\book}[1]{\textsf{#1}}
+\newcommand{\name}[1]{\textsc{#1}}
+\newcommand{\iron}[1]{\glq#1\grq{}}
+
+% The following are common abbreviations for the German language
+% \newcommand{\zB}{\mbox{z.\,B.}\xspace}
+% \newcommand{\dH}{\mbox{d.\,h.}\xspace}
+% \newcommand{\ua}{\mbox{u.\,a.}\xspace}
+
+
+% -------------- OTHER GENERAL SETTINGS ----------------
+\makeindex
+\makeglossary
+

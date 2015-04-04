@@ -1,0 +1,43 @@
+{: .title }
+# Book Title
+
+{: .title }
+### Subtitle
+
+{: .title }
+Subsubtitle
+
+<br />
+<br />
+
+{: .title }
+*Author*
+
+<br />
+
+{: .title }
+Publisher
+
+
+<br style='page-break-before:always;'>
+
+
+{: .copyright }
+Copyright &copy; Author  
+http://www.example.com
+
+{: .copyright }
+1\. Edition, 2012  
+Publsher (Website)  
+ISBN XXXXXX
+
+{: .copyright }
+Copyright remark goes here. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+{: .copyright }
+At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+{: .copyright }
+Another  
+Copyright  
+Notice

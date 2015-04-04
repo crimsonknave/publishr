@@ -1,0 +1,88 @@
+% input basic formatting instructions to keep this file simpler
+\input{book.en}
+
+
+% --------------- DEFINE "DUST" PAGE -------------------
+\extratitle{
+\small
+\vspace*{4\baselineskip}
+\begin{center}\book{Book Title}\end{center}
+\vspace*{2\baselineskip}
+\input{covertext.en}
+}
+
+% --------------- DEFINE TITLE PAGE -------------------
+\title{Book Title}
+\author{\textsc{Author}}
+\subject{\textsf{This is a\\subtitle}}
+\date{} % leave date empty
+\publishers{Publisher Name}
+
+
+
+% --------------- DEFINE COPYRIGHT PAGE ---------------
+\lowertitleback{
+\small
+Copyright \copyright{} Authorname\\
+http://www.example.org
+\vspace*{1\baselineskip}
+1. Edition 2012\\
+Publihsing Company (www.publishingcompany.com)\\
+ISBN 123-4-567890-12-3
+\vspace*{1\baselineskip}
+All Rights reserved. Add additional copyright instructions here ...
+\vspace*{1\baselineskip}
+Another note.
+}
+
+
+
+
+% --------------- THE ACTUAL BEGINNING OF THE DOCUMENT ---------------
+\begin{document}
+
+% \layout{} % print the margin variables with all current values
+
+% ---------- beginning ------------
+\clearscrheadfoot
+\pagestyle{empty}
+
+% title page
+\maketitle
+% \includepdf[pages={-},noautoscale=true]{title.pdf}
+
+\tableofcontents
+
+
+% ----------- header settings --------
+\ofoot[]{\pagemark} % page numbers
+\lehead[]{Book Title}
+
+% set current chapter name as right header of odd pages
+\rohead{\headmark}
+\automark[chapter]{section}
+
+
+% ---------- main contents ------------
+% if chapters don't start with 1, specify start number here
+% \setcounter{chapter}{33}
+
+% include all your files manually here, one after the other:
+\input{01.chapter1.en}
+\input{02.chapter2.en}
+
+
+% ---------- Index ------------
+% uncomment the following in case you want a classical keyword index
+
+% \newpage
+% \mbox{}
+% \newpage
+% \mbox{}
+% \cleardoublepage
+% \rohead[]{\sffamily\footnotesize Index}
+% \addcontentsline{toc}{chapter}{Index}
+% \scriptsize
+% \printindex
+
+\end{document}
