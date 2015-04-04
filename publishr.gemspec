@@ -25,5 +25,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "unicode_utils"
   s.add_runtime_dependency "bibtex-ruby"
   s.add_runtime_dependency "citeproc-ruby"
-  s.add_runtime_dependency "therubyracer"
+  s.add_runtime_dependency "execjs"
 end
