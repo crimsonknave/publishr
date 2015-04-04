@@ -27,4 +27,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "bibtex-ruby"
   s.add_runtime_dependency "citeproc-ruby"
   s.add_runtime_dependency "execjs"
+  s.add_runtime_dependency "zip"
 end
