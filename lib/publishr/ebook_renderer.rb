@@ -156,8 +156,15 @@ module Publishr
       File.open(File.join(@outpath,'toc.ncx'),'w'){ |f| f.write render_toc_ncx     }
       Dir.chdir @outpath
       filename = File.join(@inpath,"#{ @name }#{ @language }.epub")
-      `zip -X0 #{ filename } mimetype`
-      `zip -Xur9D #{ filename } *`
+      #`zip -X0 #{ filename } mimetype`
+      #`zip -Xur9D #{ filename } *`
+      # TODO: Come back here
+      require 'zip'
+      Zip::File.open(filename, Zip::File::CREATE) do |zip_file|
+        Dir[@outpath].each do |file|
+          zip_file.add(file, @outpath + '/' + file)
+        end
+      end
     end
 
     def render_content_opf
