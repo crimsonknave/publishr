@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{Rapid publishing for ebooks, paper and the web}
   s.description = %q{Generates mobi files for Kindle, ebook files for other ebook readers, PDF via LaTex, and static webpages via webgen, all specified by a well-structured file system consisting of plain-text kramdown (a great flavour of Markdown) text files, as well as images.}
   s.rubyforge_project = "publishr"
+  s.license = 'GPLv3'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
